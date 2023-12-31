@@ -75,4 +75,12 @@ In this project we have used github, google, email provider. see the following d
 - [google](https://next-auth.js.org/providers/google)
 - [email provider](https://next-auth.js.org/providers/email) Used Resend service for this provider. Email provider option SMTP.. [How to use SMTP link](https://resend.com/changelog/smtp-service)
 
-7 -Create `NextAuthProvider.tsx` component and wrap children in appLayout. See `app/components/NextAuthProvider.tsx`
+7 - Create `NextAuthProvider.tsx` component and wrap children in appLayout. See `app/components/NextAuthProvider.tsx`
+
+8 - to hock the UI with NextAuth, use `signIn()` and `signOut()` methods and use them accordingly on onClick within `app/(auth)/login/page.tsx` adn `app/(auth)/sign-up/page.tsx`
+
+Note: for login with email, make sure you add method and the acton:
+
+```
+ <form method="post" action="/api/auth/signin">
+ ```
