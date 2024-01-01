@@ -1,11 +1,11 @@
 import React from "react"
-import MovieVideo from "../components/MovieHero"
+import MovieHero from "../components/MovieHero"
 import RecentlyAdded from "../components/RecentlyAdded"
 
 export default function home() {
   return (
     <div className="p-5 lg:p-0">
-      <MovieVideo />
+      <MovieHero />
       <RecentlyAdded />
     </div>
   )

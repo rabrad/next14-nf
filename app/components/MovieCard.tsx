@@ -4,8 +4,8 @@ import { Button } from "@/components/ui/button"
 import { Heart, PlayCircleIcon } from "lucide-react"
 import PlayMovieModal from "./PlayMovieModal"
 import { useState } from "react"
-// import { addToWatchList, deleteFromWatchList } from "../util/serverActions"
 import { usePathname } from "next/navigation"
+import { addToWatchList, deleteFromWatchList } from "../utils/serverActions"
 
 interface MovieCardProps {
   title: string
@@ -42,7 +42,7 @@ export default function MovieCard({
 
       <div className="absolute top-5 right-5 z-10">
         {watchLists ? (
-          <form>
+          <form action={deleteFromWatchList}>
             <input type="hidden" name="watchListsId" value={watchListsId} />
             <input type="hidden" name="pathname" value={pathname} />
             <Button variant="outline" size="icon">
@@ -50,7 +50,7 @@ export default function MovieCard({
             </Button>
           </form>
         ) : (
-          <form>
+          <form action={addToWatchList}>
             <input type="hidden" name="movieId" value={movieId} />
             <input type="hidden" name="pathname" value={pathname} />
             <Button variant="outline" size="icon">

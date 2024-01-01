@@ -16,7 +16,7 @@ const links: LinksProps[] = [
   { name: "Tv Shows", href: "/home/shows" },
   { name: "Movies", href: "/home/movies" },
   { name: "Recently Added", href: "/home/recently" },
-  { name: "My List", href: "/home/user/list" },
+  { name: "My List", href: "/home/user/watch-list" },
 ]
 
 export default function Navbar({ userImage, userName }: UserNavProps) {
