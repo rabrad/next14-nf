@@ -21,6 +21,7 @@ Setting up NextAuth.js with Prisma as the database adapter in a Next.js applicat
 following the [documentation page](https://authjs.dev/reference/adapter/prisma). find the schema `model/s` and add them to `prisma/schema.prisma`
 
 3 - run `npx prisma push` to populate the DB.
+(Incase of adding more prisma models in later stage, `run npx prisma db push` and then `npx prisma push` to sync prisma with the db)
 
 4 - create `app/utils/db.ts` we need to fix a current issue in NextAuth when running prisma on Dev mode.See [Best practice for instantiating PrismaClient with Next.js](https://www.prisma.io/docs/orm/more/help-and-troubleshooting/help-articles/nextjs-prisma-client-dev-practices)
 
