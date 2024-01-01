@@ -26,22 +26,23 @@ export default async function MovieHero() {
   const data = await getData()
 
   return (
-    <section className="h-[55vh] lg:h-[62vh] w-full flex justify-start items-center">
+    <section className="h-[55vh] lg:h-[60vh] w-full flex justify-start items-center">
       <video
         poster={data?.imageString}
         autoPlay
         muted
         loop
         src={data?.videoSource}
-        className="w-full absolute top-0 left-0 h-[63vh] md:h-[65vh] object-cover -z-10 brightness-[60%]"
-      />
+        className="w-full absolute -top-8 left-0 h-[68vh] object-cover -z-10 brightness-[40%]"
+      ></video>
+
       <div className="absolute w-[90%] lg:w-[40%] mx-auto">
-        <h1 className="text-white text-4xl md:text-5xl lg:text-6xl font-bold">
+        <h1 className="text-white text-3xl md:text-4xl lg:text-5xl font-bold">
           {data?.title}
         </h1>
-        <div className="text-white text-lg mt-5 line-clamp-3">
+        <p className="text-white text-base md:text-lg mt-5 leading-2 line-clamp-3">
           {data?.overview}
-        </div>
+        </p>
         <div className="flex gap-x-3 mt-4">
           <HeroButtons
             age={data?.age!}
