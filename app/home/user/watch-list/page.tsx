@@ -33,7 +33,7 @@ async function getData(userId: string) {
   return data
 }
 
-export async function page() {
+export default async function page() {
   const session = await getServerSession(authOptions)
   const data = await getData(session?.user?.email!)
 
@@ -86,5 +86,3 @@ export async function page() {
     </>
   )
 }
-
-export default page
