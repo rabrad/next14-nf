@@ -6,7 +6,7 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog"
 
-interface iAppProps {
+interface PlayMovieModalProps {
   title: string
   overview: string
   youtubeUrl: string
@@ -26,13 +26,14 @@ export default function PlayMovieModal({
   age,
   duration,
   release,
-}: iAppProps) {
+}: PlayMovieModalProps) {
   return (
     <Dialog open={state} onOpenChange={() => changeState(!state)}>
       <DialogContent className="sm:max-w-[425px]">
+        <iframe src={youtubeUrl} height={250} className="w-full"></iframe>
         <DialogHeader>
           <DialogTitle>{title}</DialogTitle>
-          <DialogDescription className="line-clamp-3">
+          <DialogDescription className="line-clamp-4">
             {overview}
           </DialogDescription>
           <div className="flex gap-x-2 items-center">
@@ -41,7 +42,6 @@ export default function PlayMovieModal({
             <p>{duration}h</p>
           </div>
         </DialogHeader>
-        <iframe src={youtubeUrl} height={250} className="w-full"></iframe>
       </DialogContent>
     </Dialog>
   )

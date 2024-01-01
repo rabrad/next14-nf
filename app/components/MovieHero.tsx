@@ -1,6 +1,9 @@
 import { Button } from "@/components/ui/button"
 import prisma from "../utils/db"
 import { InfoIcon, PlayCircle } from "lucide-react"
+import { useState } from "react"
+import { tree } from "next/dist/build/templates/app-page"
+import HeroButtons from "./HeroButtons"
 
 async function getData() {
   const data = await prisma.movie.findFirst({
@@ -40,13 +43,15 @@ export default async function MovieHero() {
           {data?.overview}
         </div>
         <div className="flex gap-x-3 mt-4">
-          <Button>
-            <PlayCircle className="w-5 h-5 mr-2" /> Play
-          </Button>
-          <Button>
-            <InfoIcon className="w-5 h-5 mr-2" />
-            More info
-          </Button>
+          <HeroButtons
+            age={data?.age!}
+            duration={data?.duration!}
+            key={data?.id!}
+            overview={data?.overview!}
+            release={data?.release!}
+            title={data?.title!}
+            youtubeUrl={data?.youtubeString!}
+          />
         </div>
       </div>
     </section>
